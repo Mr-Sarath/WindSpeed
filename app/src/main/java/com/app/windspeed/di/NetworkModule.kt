@@ -1,7 +1,7 @@
-package com.app.di
+package com.app.windspeed.di
 
-import com.app.remote.ApiService
-import com.app.utils.Constants.BASE_URL
+import com.app.windspeed.remote.ApiService
+import com.app.windspeed.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

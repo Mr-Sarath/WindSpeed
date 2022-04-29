@@ -1,7 +1,7 @@
-package com.app.remote
+package com.app.windspeed.remote
 
 
-import com.app.model.CurrentWeatherResponse
+import com.app.windspeed.model.CurrentWeatherResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -15,7 +15,7 @@ interface ApiService {
 */
 
     @Headers("Content-Type:application/json")
-    @GET("faq")
+    @GET("weather?lat={lat}&lon={lon}&appid={API key}")
     suspend fun weatherapi(
 /*
         @Header("Authorization") auth: String,

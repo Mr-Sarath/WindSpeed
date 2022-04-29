@@ -8,9 +8,9 @@ import android.os.Looper
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
-import com.app.utils.*
-import com.app.utils.Constants.API_KEY
-import com.app.viewmodel.WeatherViewModel
+import com.app.windspeed.utils.*
+import com.app.windspeed.utils.Constants.API_KEY
+import com.app.windspeed.viewmodel.WeatherViewModel
 import com.app.windspeed.databinding.ActivityMainBinding
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest

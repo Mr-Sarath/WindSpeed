@@ -1,4 +1,4 @@
-package com.app.utils
+package com.app.windspeed.utils
 
 import android.annotation.SuppressLint
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.app.utils
+package com.app.windspeed.utils
 
 open class Event<out T>(private val content: T) {
 

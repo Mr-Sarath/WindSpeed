@@ -1,4 +1,4 @@
-package com.app.utils
+package com.app.windspeed.utils
 import android.Manifest
 import android.content.Context
 import android.content.Intent

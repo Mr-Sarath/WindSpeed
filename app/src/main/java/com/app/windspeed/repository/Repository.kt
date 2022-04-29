@@ -1,6 +1,6 @@
-package com.app.repository
+package com.app.windspeed.repository
 
-import com.app.remote.ApiService
+import com.app.windspeed.remote.ApiService
 import javax.inject.Inject
 
 class Repository @Inject constructor(private val apiService: ApiService) {

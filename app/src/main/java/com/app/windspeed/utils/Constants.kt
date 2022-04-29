@@ -1,8 +1,8 @@
-package com.app.utils
+package com.app.windspeed.utils
 
 object Constants {
     const val API_KEY = "20638d8ca244d0a07f8a601a2fbeb54d"
-    const val BASE_URL = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}"
+    const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
 
     const val NETWORK_FAILURE = "No Internet Connection"
     const val CONVERSION_FAILURE = "Conversion Error"

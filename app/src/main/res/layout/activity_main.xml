@@ -45,7 +45,7 @@
                 android:layout_height="match_parent"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_url="https://assets5.lottiefiles.com/packages/lf20_xlkigwme.json"
+                app:lottie_fileName="clouds_slow.json"
                 />
         </androidx.cardview.widget.CardView>
 

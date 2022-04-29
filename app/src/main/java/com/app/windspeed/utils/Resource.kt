@@ -1,4 +1,4 @@
-package com.app.utils
+package com.app.windspeed.utils
 
 sealed class Resource<T>(
     val data: T? = null,

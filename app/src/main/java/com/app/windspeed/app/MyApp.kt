@@ -1,4 +1,4 @@
-package com.app.app
+package com.app.windspeed.app
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

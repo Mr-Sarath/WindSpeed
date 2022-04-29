@@ -1,4 +1,4 @@
-package com.app.model
+package com.app.windspeed.model
 
 import com.google.gson.annotations.SerializedName
 

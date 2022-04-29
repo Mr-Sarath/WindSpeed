@@ -1,4 +1,4 @@
-package com.app.utils
+package com.app.windspeed.utils
 
 import org.json.JSONObject
 import retrofit2.Response

@@ -1,15 +1,15 @@
-package com.app.viewmodel
+package com.app.windspeed.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.model.CurrentWeatherResponse
-import com.app.repository.Repository
-import com.app.utils.Constants
-import com.app.utils.Event
-import com.app.utils.Resource
-import com.app.utils.ResponseCodeManager.checkResponse
+import com.app.windspeed.model.CurrentWeatherResponse
+import com.app.windspeed.repository.Repository
+import com.app.windspeed.utils.Constants
+import com.app.windspeed.utils.Event
+import com.app.windspeed.utils.Resource
+import com.app.windspeed.utils.ResponseCodeManager.checkResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
