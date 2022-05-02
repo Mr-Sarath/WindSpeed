@@ -17,6 +17,9 @@ import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.math.round
+import kotlin.math.roundToLong
+import kotlin.math.sign
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -57,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getCurrentWeatherApi(lat: String, lng: String) {
+    private fun getCurrentWeatherApi(lat: Double, lng: Double) {
         viewModel.weatherList(latitude = lat, longitude = lng, API_KEY)
         viewModel.weatherResponse.observe(this) { event ->
             event.getContentIfNotHandled()?.let { response ->
@@ -70,23 +73,26 @@ class MainActivity : AppCompatActivity() {
                                     binding?.locationText?.text = it
                                 }
                                 res.main?.temp?.let {
-                                    binding?.celciusText?.text = it.toString()
+                                    binding?.celciusText?.text = "$it°"
                                 }
                                 res.weather?.get(0)?.let { it->
                                     it.main.let {
                                         binding?.conditionText?.text = it
                                     }
-                                  /*  when(it.icon.toString()){
+                                    when(it.icon.toString()){
                                         "01d" -> {
-                                            binding?.conditionText
+                                            binding?.lottie?.setAnimation("clean sky.json")
                                         }
-                                    }*/
+                                        else -> {
+
+                                        }
+                                    }
                                 }
 
 
                             } else {
                                 res.message?.let {
-                                    shortToast(it)
+                                    shortToast("hii   "+it)
                                 }
                             }
                         }
@@ -94,9 +100,7 @@ class MainActivity : AppCompatActivity() {
                     is Resource.Error -> {
                         binding?.progressW?.hide()
 
-                        binding?.root?.errorSnackAction(
-                            response.message ?: "Something went wrong, Please try again!"
-                        )
+                        binding?.root?.errorSnackAction(response.message + response.data?.cod  + response.data?.message ?: "Something went wrong, Please try again!")
                         {}
                     }
                     is Resource.Loading<*> -> {
@@ -128,9 +132,12 @@ class MainActivity : AppCompatActivity() {
                 override fun onLocationResult(locationResult: LocationResult) {
                     super.onLocationResult(locationResult)
                     for (location in locationResult.locations) {
-                        val lat = location.latitude.toString()
-                        val lng = location.longitude.toString()
-                        getCurrentWeatherApi(lat, lng)
+                        val lat:Double = String.format("%.3f", location.latitude).toDouble()
+                        val lng:Double = String.format("%.3f", location.longitude).toDouble()
+
+//                        val i = (-1.12).to
+                        shortToast("${lat}\n$lng")
+                      getCurrentWeatherApi(lat = lat, lng = lng)
                     }
                     // Few more things we can do here:
                     // For example: Update the location of user on server

@@ -5,10 +5,10 @@ import javax.inject.Inject
 
 class Repository @Inject constructor(private val apiService: ApiService) {
 
-    suspend fun weather(latitude: String, longitude: String, apikey: String) =
+    suspend fun weather(latitude: Double, longitude: Double, apikey: String) =
         apiService.weatherapi(
-            latitude,
-            longitude,
+            latitude.toInt(),
+            longitude.toInt(),
             apikey
         )
 }

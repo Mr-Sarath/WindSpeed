@@ -37,16 +37,17 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cvLottie"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+
+            android:elevation="20dp">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/lottie"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_fileName="clouds_slow.json"
-                />
+                app:lottie_fileName="clean sky.json"
+                app:lottie_loop="true" />
         </androidx.cardview.widget.CardView>
 
         <com.google.android.material.card.MaterialCardView

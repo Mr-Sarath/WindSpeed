@@ -27,7 +27,7 @@ constructor(private val repository: Repository) : ViewModel() {
         get() = mWeatherResponse
 
 
-    fun weatherList(latitude: String, longitude: String, apikey: String) =
+    fun weatherList(latitude: Double, longitude: Double, apikey: String) =
         viewModelScope.launch(Dispatchers.IO) {
             mWeatherResponse.postValue(Event(Resource.Loading()))
             try {

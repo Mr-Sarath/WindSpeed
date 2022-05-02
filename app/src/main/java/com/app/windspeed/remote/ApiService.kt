@@ -5,6 +5,7 @@ import com.app.windspeed.model.CurrentWeatherResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
@@ -13,16 +14,22 @@ interface ApiService {
     @POST("auth/login")
     suspend fun loginApi(@Body info: LoginBody): Response<LoginResponse>
 */
-
-    @Headers("Content-Type:application/json")
+/*
     @GET("weather?lat={lat}&lon={lon}&appid={API key}")
     suspend fun weatherapi(
-/*
-        @Header("Authorization") auth: String,
+        @Path("lat") latitude:String,
+        @Path("lon") longitude:String,
+        @Path("appid") apikey:String
+    ): Response<CurrentWeatherResponse>
 */
-        @Query("lat") latitude:String,
-        @Query("lon") longitude:String,
-        @Query("appid") apikey:String
+
+//    @Headers("Content-Type:application/json")
+    @GET("data/2.5/weather?")
+    suspend fun weatherapi(
+    @Query("lat") latitude: Int,
+    @Query("lon") longitude: Int,
+    @Query("appid") apikey: String,
+    @Query("units") unit: String="metric"
     ): Response<CurrentWeatherResponse>
 
 }
